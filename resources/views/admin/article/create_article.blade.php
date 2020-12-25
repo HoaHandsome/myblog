@@ -43,19 +43,42 @@
                     </select>
                     <div class="invalid-feedback">Example invalid custom select feedback</div>
                 </div>
-
-                <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="validatedCustomFile" required>
-                    <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
-                    <div class="invalid-feedback">Example invalid custom file feedback</div>
+                 <div class="input-group">
+                <span class="input-group-btn">
+                    <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-primary">
+                    <i class="fa fa-picture-o"></i> Choose
+                    </a>
+                </span>
+                <input id="thumbnail" class="form-control" type="text" name="filepath">
                 </div>
+                <img id="holder" style="margin-top:15px;max-height:100px;">
 
+                
+                  
                 <div class="form-group">
                 <button class="btn btn-primary" type="submit">Create Article</button>
                 </div>
+                
 
                 </form>
 
 </div>
+
+<script src="//cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="/vendor/unisharp/laravel-ckeditor/adapters/jquery.js"></script>
+ <script src="/vendor/laravel-filemanager/js/stand-alone-button.js"></script>
+<script>
+  var options = {
+    filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
+    filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token=',
+    filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
+    filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token='
+  };
+CKEDITOR.replace('validationTextarea', options);
+ $('#lfm').filemanager('image');
+</script>
+
+
 
 @endsection
