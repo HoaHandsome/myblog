@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Model\Category;
 
 class AdminController extends Controller
 {
@@ -65,7 +66,8 @@ class AdminController extends Controller
     }
     public function create_article()
     {
-        return view('admin/article/create_article');
+        $categories = Category::all();
+        return view('admin/article/create_article')->with('categories',$categories);
         
     }
     
