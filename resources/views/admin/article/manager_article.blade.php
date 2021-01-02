@@ -19,9 +19,9 @@
                                     <thead class="thead-dark">
                                         <tr>
                                             <th>Name</th>
-                                            <th>Description</th>
                                             <th>Date</th>
-                                            <th>Name user</th>
+                                            <th>Category</th>
+                                            <th>Auth</th>
                                             <th>View</th>
                                             <th>Edit</th>
                                             <th>Delete</th>
@@ -31,8 +31,8 @@
                                         @foreach ($articles as $article)
                                         <tr>
                                             <th>{{$article->name}}</th>
-                                            <th>{{$article->description}}</th>
                                             <th>{{$article->created_at}}</th>
+                                            <th>{{$article->category->name}}</th>
                                             <th>{{$article->user->name}}</th>
                                             <td><a href="#" class="btn btn-primary"><i class="far fa-eye"></i> View<a></td>
                                             <td><a href="{{url('admin/edit_article/'.$article->id)}}" class="btn btn-warning"><i class="fas fa-edit"></i> Edit<a></td>
@@ -43,6 +43,7 @@
                                                             </tbody>
                                             @endforeach
                                                         </table>
+                                                        {{$articles->links()}}
                                                     </div>
                                                 </div>
                                             </div>

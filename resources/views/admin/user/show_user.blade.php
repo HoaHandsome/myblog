@@ -20,29 +20,21 @@
                                             <th>ID</th>
                                             <th>User Name</th>
                                             <th>Avatar</th>
-                                            <th>Comments</th>
                                             <th>Date create</th>
                                             <th>Delete</th>
                                         </tr>
                                     </thead>
-                                    <tfoot>
-                                        <th>ID</th>
-                                        <th>User Name</th>
-                                        <th>Avatar</th>
-                                        <th>Comments</th>
-                                        <th>Date create</th>
-                                        <th>Delete</th>
-                                     
-                                    </tfoot>
                                     <tbody>
+                                        @foreach ($users as $user)
+                                            
                                         <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td>Edinburgh</td>
-                                            <td>61</td>
+                                            <td>{{$user->id}}</td>
+                                            <td>{{$user->name}}</td>
+                                            <td><img src="{{url($user->email)}}" alt=""></td>
+                                            
                                             <td><a href="#"><i class="fas fa-trash-alt"></i> Delete<a></td>
-                                        </tr>
+                                            </tr>
+                                            @endforeach
                                         
                                     </tbody>
                                 </table>

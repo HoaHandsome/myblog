@@ -22,7 +22,7 @@
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                                 Article</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">40,000</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{$count_article}}</div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-bookmark fa-2x text-gray-300"></i>
@@ -40,7 +40,7 @@
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                                 Category</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">215,000</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{$count_category}}</div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-box-open fa-2x text-gray-300"></i>
@@ -60,7 +60,7 @@
                                             </div>
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col-auto">
-                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50</div>
+                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{$count_user}}</div>
                                                 </div>
 
                                             </div>
@@ -114,48 +114,20 @@
                                             <th>ID</th>
                                             <th>Name Article</th>
                                             <th>Author</th>
-                                            <th>Comments</th>
                                             <th>Date create</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
+                                      <tbody>
+                                        @foreach ($articles as $article)
                                         <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td>Edinburgh</td>
-                                            <td>25/11/2046</td>
+                                            <th>{{$article->id}}</th>
+                                            <th>{{$article->name}}</th>
+                                            <th>{{$article->user->name}}</th>
+                                            <th>{{$article->created_at}}</th> 
                                         </tr>
-                                        <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td>Edinburgh</td>
-                                            <td>25/11/2046</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td>Edinburgh</td>
-                                            <td>25/11/2046</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td>Edinburgh</td>
-                                            <td>25/11/2046</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td>Edinburgh</td>
-                                            <td>25/11/2046</td>
-                                        </tr>
-                                        
-                                    </tbody>
+                                       
+                                                            </tbody>
+                                            @endforeach
                                 </table>
 
                                 </div>

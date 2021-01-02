@@ -20,7 +20,6 @@
                                             <th>Name</th>
                                             <th>Description</th>
                                             <th>Date</th>
-                                            <th>View</th>
                                             <th>Edit</th>
                                             <th>Delete</th>
                                         </tr>
@@ -31,7 +30,6 @@
                                             <th>{{$category->name}}</th>
                                             <th>{{$category->description}}</th>
                                             <th>{{$category->created_at}}</th>
-                                            <td><a href="#" class="btn btn-primary"><i class="far fa-eye"></i> View<a></td>
                                             <td><a href="{{url('admin/edit_category/'.$category->id)}}" class="btn btn-warning"><i class="fas fa-edit"></i> Edit<a></td>
                                             <td><a  href="{{url('admin/delete_category/'.$category->id)}}" class="btn btn-danger"><i class="fas fa-trash-alt"></i> Delete<a></td>
                                         </tr>

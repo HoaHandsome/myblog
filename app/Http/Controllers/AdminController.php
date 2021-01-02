@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Article;
+use App\User;
 use Auth;
 use Illuminate\Support\Str;
 
@@ -57,7 +58,15 @@ class AdminController extends Controller
 
     public function show_dashboard()
     {
-        return view('admin/main/dashboard');
+        $count_article = Article::all()->count();
+        $count_category = Category::all()->count();
+        $count_user = User::all()->count();
+        $articles = Article::orderBy('created_at','desc')->paginate(7);
+        return view('admin/main/dashboard')
+        ->with('count_article',$count_article)
+        ->with('count_category',$count_category)
+        ->with('count_user',$count_user)
+        ->with('articles',$articles);
    
     }
 
@@ -65,7 +74,7 @@ class AdminController extends Controller
 
     public function manager_article()
     {
-        $articles = Article::all();
+        $articles = Article::paginate(10);
 
         return view('admin/article/manager_article')->with('articles',$articles);
    
@@ -130,11 +139,31 @@ class AdminController extends Controller
         return redirect()->route('admin_create_category')->with('messenger','Lưu thành công');
     }
 
+    public function edit_category($id)
+    {
+      $category = Category::findOrFail($id);
+      return view('admin/category/create_category')->with('category',$category);
+    }
+
+    public function save_as_category(Request $request , $id)
+    {
+       $new_category = Category::findOrFail($id);
+       $new_category -> fill($request->all());
+       $new_category->save();
+       return redirect()->route('admin_edit_category' ,['id'=> $new_category->id])->with('messenger','Chỉnh sửa thành công')->with('category',$new_category);
+    
+    }
+     public function delete_category($id)
+    {
+        Category::destroy($id);
+        return redirect()->route('admin_manager_category')->with('messenger','Xóa thành công');
+    }
     /* user */
 
     public function show_user()
     {
-        return view('admin/user/show_user');
+        $users = User::paginate(10);
+        return view('admin/user/show_user')->with('users',$users);
    
     }
     
