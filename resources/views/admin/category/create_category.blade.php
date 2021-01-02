@@ -8,10 +8,18 @@
         <h1 class="h3 mb-2 text-gray-800">Category</h1>
         <p class="mb-4">This page for create Category.</p>
                                                                 
-                <form class="was-validated">
+                @if(\Session::has('messenger'))
+
+                <div class="alert alert-success" role="alert">
+
+                {{\Session::get('messenger')}}
+                </div>
+                @endif
+                <form class="was-validated" method="POST" action="{{route('admin_save_category')}}">
                 <div class="mb-3">
+                    @csrf
                     <label for="Category">Name of Category</label> 
-                    <input type="text" id="Category" class="form-control" aria-describedby="Name of Article" required placeholder="Name of article">
+                    <input type="text" id="Category" class="form-control" aria-describedby="Name of Article" required placeholder="Name of Category" name="name">
                     <div class="invalid-feedback">
                     Please enter a message in the textarea.
                     </div>
@@ -19,7 +27,7 @@
 
                 <div class="mb-3">
                     <label for="description">Description</label> 
-                    <input type="text" id="description" class="form-control" aria-describedby="Name of description" required placeholder="Description of article">
+                    <input type="text" id="description" class="form-control" aria-describedby="Name of description" required placeholder="Description of category" name="description">
                     <div class="invalid-feedback">
                     Please enter a message in the textarea.
                     </div>

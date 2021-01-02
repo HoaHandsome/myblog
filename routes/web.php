@@ -32,19 +32,23 @@ Route::get('registerr', function () {
 Route::group(['prefix' => 'admin'], function () {
     /* Show and edit article */
     Route::get('','AdminController@show_dashboard')->name('admin_show_dashboard');
-    Route::get('article','AdminController@show_article')->name('admin_show_article');
+    Route::get('manager_article','AdminController@manager_article')->name('admin_manager_article');
     Route::get('create_article','AdminController@create_article')->name('admin_create_article');
-    Route::get('edit_article/{id}','AdminController@edit_article');
-    Route::get('delete_article/{id}','AdminController@delete_article');
+    Route::post('save_article','AdminController@save_article')->name('admin_save_article');
+    Route::get('delete_article/{id}','AdminController@delete_article')->name('admin_delete_article');
+    Route::get('edit_article/{id}','AdminController@edit_article')->name('admin_edit_article');
+    Route::post('save_as_article/{id}','AdminController@save_as_article')->name('admin_save_as_article');
     /* Show and delete category */
-    Route::get('category','AdminController@show_category')->name('admin_show_category');
+    Route::get('manager_category','AdminController@manager_category')->name('admin_manager_category');
     Route::get('create_category','AdminController@create_category')->name('admin_create_category');
+    Route::post('save_category','AdminController@save_category')->name('admin_save_category');
     Route::get('edit_category/{id}','AdminController@edit_article');
     Route::get('delete_category/{id}','AdminController@delete_article');
     /* Show and delete comment */
     Route::get('comment','AdminController@show_comment')->name('admin_show_comment');
     Route::get('user','AdminController@show_user')->name('admin_show_user');
     Route::get('delete_comment/{id}','AdminController@delete_comment');
+    
 });
 /* show all main */
 Route::group(['prefix' => ''], function () {

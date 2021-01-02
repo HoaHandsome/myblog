@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Model\Category;
+use App\Models\Category;
+use App\Models\Article;
+use Auth;
+use Illuminate\Support\Str;
+
 
 class AdminController extends Controller
 {
@@ -59,9 +63,11 @@ class AdminController extends Controller
 
    /* article */
 
-    public function show_article()
+    public function manager_article()
     {
-        return view('admin/article/view_article');
+        $articles = Article::all();
+
+        return view('admin/article/manager_article')->with('articles',$articles);
    
     }
     public function create_article()
@@ -70,17 +76,58 @@ class AdminController extends Controller
         return view('admin/article/create_article')->with('categories',$categories);
         
     }
+    public function save_article(Request $request)
+    {
+        $article = new Article();
+        $article ->fill($request->all());
+        $article->slug = Str::slug($request->name ,'-');
+        $article->user_id = Auth::user()->id;
+        
+        $article ->save();
+        return redirect()->route('admin_create_article')->with('messenger','Lưu thành công');
+
+        
+    }
+    public function delete_article($id)
+    {
+        Article::destroy($id);
+        return redirect()->route('admin_manager_article');
+    }
+
+    public function edit_article($id)
+    {
+      $categories = Category::all();
+      $article = Article::findOrFail($id);
+      return view('admin/article/create_article')->with('categories',$categories)->with('article',$article);
+    }
+
+    public function save_as_article(Request $request , $id)
+    {
+       $new_article = Article::findOrFail($id);
+       $new_article->slug = Str::slug($request->name ,'-');
+       $new_article -> fill($request->all());
+       $new_article->save();
+       return redirect()->route('admin_edit_article' ,['id'=> $new_article->id])->with('messenger','Chỉnh sửa thành công')->with('article',$new_article);
+    
+    }
     
     /* category */
-    public function show_category()
+    public function manager_category()
     {
-        return view('admin/category/view_category');
+        $categories = Category::all();
+        return view('admin/category/manager_category')->with('categories',$categories);
    
     }
     public function create_category()
     {
         return view('admin/category/create_category');
-   
+    }
+    public function save_category(Request $request)
+    {
+        $category = new Category();
+        $category ->fill($request->all());
+        $category ->save();
+        return redirect()->route('admin_create_category')->with('messenger','Lưu thành công');
     }
 
     /* user */

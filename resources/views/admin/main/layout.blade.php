@@ -68,7 +68,7 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Manager Article:</h6>
-                    <a class="collapse-item active" href="{{url(route('admin_show_article'))}}">Manager Article</a>
+                    <a class="collapse-item active" href="{{url(route('admin_manager_article'))}}">Manager Article</a>
                     <a class="collapse-item" href="{{url(route('admin_create_article'))}}">Create Article</a>
                     </div>
                 </div>
@@ -85,7 +85,7 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Manage Category:</h6>
-                    <a class="collapse-item" href="{{url(route('admin_show_category'))}}">All category</a>
+                    <a class="collapse-item" href="{{url(route('admin_manager_category'))}}">All category</a>
                     <a class="collapse-item" href="{{url(route('admin_create_category'))}}">Create category</a>
                     </div>
                 </div>
