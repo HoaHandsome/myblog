@@ -5,7 +5,9 @@
 {{$article->category->name}}
 
 @foreach ($articles_relate as $article_relate)
+<img src="{{$article_relate->avatar}}" alt="">
     {{$article_relate->name}}
+    {{$article_relate->description}}
 @endforeach
 
 
