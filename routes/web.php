@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home','HomeController@index')->name('home');
 /* manage admin */
 
 Route::get('logon', function () {
@@ -62,7 +62,6 @@ Route::group(['prefix' => ''], function () {
 /* Show article */
 Route::group(['prefix' => 'blog'], function () {
     /* show article in blog */
-    Route::get('article', 'BlogController@view_article');
     Route::get('article/{id}', 'BlogController@show_article');
 
     /* Show article in category */
@@ -77,7 +76,16 @@ Route::get('test', function ()
    return view('admin/article/layout'); 
 });
 
+Route::get('/login-facebook', 'SocialController@facebookRedirect')->name('login_facebook');
+Route::get('/facebook_callback', 'SocialController@loginWithFacebook');
+
+Route::get('/login-google', 'SocialController@googleRedirect')->name('login_google');
+Route::get('/google_callback', 'SocialController@loginWithGoogle');
+
 
  Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
      \UniSharp\LaravelFilemanager\Lfm::routes();
  });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

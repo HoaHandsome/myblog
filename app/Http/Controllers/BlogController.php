@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Article;
 
 class BlogController extends Controller
 {
@@ -43,9 +44,11 @@ class BlogController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show_article($id)
     {
-        //
+        $article = Article::findOrFail($id);
+        $articles_relate = Article::whereNotIn('id',[$article->id])->where('category_id', $article->category_id)->orderBy('created_at','desc')->paginate(3);
+        return view('Blog\article')->with('article',$article)->with('articles_relate',$articles_relate);
     }
 
     /**

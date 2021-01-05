@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\Models\Category;
+use App\Models\Rule;
 
 class CategorySeeder extends Seeder
 {
@@ -17,5 +18,7 @@ class CategorySeeder extends Seeder
         Category::create([ 'name'=> 'tam su']);
         Category::create([ 'name'=> 'tuoi tre']);
         Category::create([ 'name'=> 'tinh yeu']);
+        Rule::create([ 'name'=> 'admin']);
+        Rule::create([ 'name'=> 'user']);
     }
 }
