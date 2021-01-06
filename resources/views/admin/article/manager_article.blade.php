@@ -31,11 +31,11 @@
                                         @foreach ($articles as $article)
                                         <tr>
                                             <th>{{$article->name}}</th>
-                                            <th>{{$article->created_at}}</th>
+                                            <th>{{date('d-m-Y', strtotime($article->created_at))}}</th>
                                             <th>{{$article->category->name}}</th>
                                             <th>{{$article->user->name}}</th>
-                                            <td><a href="#" class="btn btn-primary"><i class="far fa-eye"></i> View<a></td>
-                                            <td><a href="{{url('admin/edit_article/'.$article->id)}}" class="btn btn-warning"><i class="fas fa-edit"></i> Edit<a></td>
+                                            <td><a href="{{url('admin/view_article/'.$article->slug)}}" class="btn btn-primary"><i class="far fa-eye"></i> View<a></td>
+                                            <td><a href="{{url('admin/edit_article/'.$article->slug)}}" class="btn btn-warning"><i class="fas fa-edit"></i> Edit<a></td>
                                             <td><a  href="{{url('admin/delete_article/'.$article->id)}}" class="btn btn-danger"><i class="fas fa-trash-alt"></i> Delete<a></td>
                                             
                                         </tr>

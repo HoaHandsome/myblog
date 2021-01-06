@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Article;
+use App\Models\Category;
 
 class BlogController extends Controller
 {
@@ -44,11 +45,11 @@ class BlogController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show_article($id)
+    public function show_article($slug)
     {
-        $article = Article::findOrFail($id);
-        $articles_relate = Article::whereNotIn('id',[$article->id])->where('category_id', $article->category_id)->orderBy('created_at','desc')->paginate(3);
-        return view('Blog\article')->with('article',$article)->with('articles_relate',$articles_relate);
+        $article = Article::where('slug',$slug)->first();
+        $articles_relate = Article::whereNotIn('slug',[$article->slug])->where('category_id', $article->category_id)->orderBy('created_at','desc')->paginate(3);
+        return view('blog\article')->with('article',$article)->with('articles_relate',$articles_relate);
     }
 
     /**
@@ -57,9 +58,25 @@ class BlogController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function search_article(Request $request)
     {
-        //
+      $articles = Article::where('name','like', '%'.$request->content.'%')->orWhere('content','like','%'.$request->content.'%')->orderBy('created_at','desc')->paginate(10);
+      return view('blog\search_article')->with('articles',$articles);
+
+    }
+    public function category_article($id)
+    {
+      $category = Category::whereId($id)->first();
+      $articles = Article::where('category_id',$id)->orderBy('created_at','desc')->paginate(10);
+      return view('blog\search_article')->with('articles',$articles)->with('category',$category);
+
+    }
+    public function show_category()
+    {
+      $categories = Category::all();
+      return view('blog/view_category')->with('categories',$categories);
+
+
     }
 
     /**

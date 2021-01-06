@@ -32,17 +32,18 @@ Route::get('registerr', function () {
 Route::group(['prefix' => 'admin'], function () {
     /* Show and edit article */
     Route::get('','AdminController@show_dashboard')->name('admin_show_dashboard');
+    Route::get('view_article/{slug}','AdminController@view_article')->name('admin_view_article');
     Route::get('manager_article','AdminController@manager_article')->name('admin_manager_article');
     Route::get('create_article','AdminController@create_article')->name('admin_create_article');
     Route::post('save_article','AdminController@save_article')->name('admin_save_article');
     Route::get('delete_article/{id}','AdminController@delete_article')->name('admin_delete_article');
-    Route::get('edit_article/{id}','AdminController@edit_article')->name('admin_edit_article');
-    Route::post('save_as_article/{id}','AdminController@save_as_article')->name('admin_save_as_article');
+    Route::get('edit_article/{slug}','AdminController@edit_article')->name('admin_edit_article');
+    Route::post('save_as_article/{slug}','AdminController@save_as_article')->name('admin_save_as_article');
     /* Show and delete category */
     Route::get('manager_category','AdminController@manager_category')->name('admin_manager_category');
     Route::get('create_category','AdminController@create_category')->name('admin_create_category');
     Route::post('save_category','AdminController@save_category')->name('admin_save_category');
-    Route::get('edit_category/{id}','AdminController@edit_category')->name('admin_edit_category');
+    Route::get('edit_category/{slug}','AdminController@edit_category')->name('admin_edit_category');
     Route::post('save_as_category/{id}','AdminController@save_as_category')->name('admin_save_as_category');
     Route::get('delete_category/{id}','AdminController@delete_category');
     /* Show and delete comment */
@@ -62,15 +63,19 @@ Route::group(['prefix' => ''], function () {
 /* Show article */
 Route::group(['prefix' => 'blog'], function () {
     /* show article in blog */
-    Route::get('article/{id}', 'BlogController@show_article');
-
+    Route::get('article/{slug}', 'BlogController@show_article')->name('show_article');
+    Route::get('search', 'BlogController@search_article')->name('search_article');
+    Route::get('category/{id}', 'BlogController@category_article');
     /* Show article in category */
-    Route::get('category','BlogController@view_category');
-    Route::get('category/{id}','BlogController@show_category');
+    Route::get('category','BlogController@show_category');
     /* Show article where user */
-     Route::get('article/user/{id}', 'BlogController@show_article_user');
-
+    /*  Route::get('article/user/{id}', 'BlogController@show_article_user'); */
 });
+
+
+
+
+
 Route::get('test', function ()
 {
    return view('admin/article/layout'); 

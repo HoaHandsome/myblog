@@ -31,7 +31,7 @@ class AdminController extends Controller
     {
         //
     }
-
+    
     /**
      * Store a newly created resource in storage.
      *
@@ -42,7 +42,7 @@ class AdminController extends Controller
     {
         //
     }
-
+    
     /**
      * Display the specified resource.
      *
@@ -53,9 +53,9 @@ class AdminController extends Controller
     {
         //
     }
-   /* show dashboard */
-
-
+    /* show dashboard */
+    
+    
     public function show_dashboard()
     {
         $count_article = Article::all()->count();
@@ -67,17 +67,24 @@ class AdminController extends Controller
         ->with('count_category',$count_category)
         ->with('count_user',$count_user)
         ->with('articles',$articles);
-   
+        
     }
+    
+    /* article */
 
-   /* article */
-
+    public function view_article($slug)
+    {
+        $article = Article::where('slug',$slug)->first();
+        
+        return view('admin/article/view_article')->with('article',$article);
+        
+    }
     public function manager_article()
     {
         $articles = Article::paginate(10);
-
+        
         return view('admin/article/manager_article')->with('articles',$articles);
-   
+        
     }
     public function create_article()
     {
@@ -94,7 +101,7 @@ class AdminController extends Controller
         
         $article ->save();
         return redirect()->route('admin_create_article')->with('messenger','Lưu thành công');
-
+        
         
     }
     public function delete_article($id)
@@ -102,22 +109,22 @@ class AdminController extends Controller
         Article::destroy($id);
         return redirect()->route('admin_manager_article');
     }
-
-    public function edit_article($id)
+    
+    public function edit_article($slug)
     {
-      $categories = Category::all();
-      $article = Article::findOrFail($id);
-      return view('admin/article/create_article')->with('categories',$categories)->with('article',$article);
+        $categories = Category::all();
+        $article = Article::where('slug',$slug)->first();
+        return view('admin/article/create_article')->with('categories',$categories)->with('article',$article);
     }
-
+    
     public function save_as_article(Request $request , $id)
     {
-       $new_article = Article::findOrFail($id);
-       $new_article->slug = Str::slug($request->name ,'-');
-       $new_article -> fill($request->all());
-       $new_article->save();
-       return redirect()->route('admin_edit_article' ,['id'=> $new_article->id])->with('messenger','Chỉnh sửa thành công')->with('article',$new_article);
-    
+        $new_article = Article::findOrFail($id);
+        $new_article -> fill($request->all());
+        $new_article->slug = Str::slug($request->name ,'-');
+        $new_article->save();
+        return redirect()->route('admin_edit_article' ,['slug'=> $new_article->slug])->with('messenger','Chỉnh sửa thành công')->with('article',$new_article);
+        
     }
     
     /* category */
@@ -125,7 +132,7 @@ class AdminController extends Controller
     {
         $categories = Category::all();
         return view('admin/category/manager_category')->with('categories',$categories);
-   
+        
     }
     public function create_category()
     {
@@ -135,19 +142,21 @@ class AdminController extends Controller
     {
         $category = new Category();
         $category ->fill($request->all());
+        $category->slug = Str::slug($request->name ,'-');
         $category ->save();
         return redirect()->route('admin_create_category')->with('messenger','Lưu thành công');
     }
-
-    public function edit_category($id)
+    
+    public function edit_category($slug)
     {
-      $category = Category::findOrFail($id);
-      return view('admin/category/create_category')->with('category',$category);
+        $category = Category::where('slug',$slug)->first();
+        return view('admin/category/create_category')->with('category',$category);
     }
-
-    public function save_as_category(Request $request , $id)
+    
+    public function save_as_category(Request $request , $slug)
     {
-       $new_category = Category::findOrFail($id);
+       $new_category = Category::where('slug',$slug)->first();
+        $new_category->slug = Str::slug($request->name ,'-');
        $new_category -> fill($request->all());
        $new_category->save();
        return redirect()->route('admin_edit_category' ,['id'=> $new_category->id])->with('messenger','Chỉnh sửa thành công')->with('category',$new_category);

@@ -1,12 +1,22 @@
+<form method="get" action="{{url(route('search_article'))}}">
+    @csrf
+    <input type="text" name="content" value="{{old('content')}}">
+    <button type="submit">Search</button>
+</form>
+
+
+
+
 {{$article->name}}
 <img src="{{$article->avatar}}" alt="">
 {!!$article->content !!}
 {{$article->user->name}}
-{{$article->category->name}}
+<a href="{{url('blog/category/'.$article->category_id)}}">{{$article->category_id}}</a>
+
 
 @foreach ($articles_relate as $article_relate)
 <img src="{{$article_relate->avatar}}" alt="">
-    {{$article_relate->name}}
+    <a href="{{url('blog/article/'.$article_relate->slug)}}"> {{$article_relate->name}}</a>  
     {{$article_relate->description}}
 @endforeach
 
