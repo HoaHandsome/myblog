@@ -32,7 +32,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{route('admin_show_dashboard')}}">
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{url(route('admin_show_dashboard'))}}">
                 <div class="sidebar-brand-icon rotate-n-15">
                  <i class="fas fa-star"></i>
                 </div>
@@ -44,7 +44,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-            <a class="nav-link" href="{{route('admin_show_dashboard')}}">
+            <a class="nav-link" href="{{url(route('admin_show_dashboard'))}}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -109,8 +109,7 @@
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Manage user:</h6>
-                    <a class="collapse-item" href="{{route('admin_show_user')}}">View all</a>
-                        <a class="collapse-item"href="{{route('admin_show_comment')}}">View Comment</a>
+                    <a class="collapse-item" href="{{url(route('admin_show_user'))}}">All users</a>
                     </div>
                 </div>
             </li>
@@ -123,13 +122,7 @@
                 <div id="collapsePages2" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Manage Messenger:</h6>
-                        <a class="collapse-item" href="login.html">Login</a>
-                        <a class="collapse-item" href="register.html">Register</a>
-                        <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-                        <div class="collapse-divider"></div>
-                        <h6 class="collapse-header">Other Pages:</h6>
-                        <a class="collapse-item" href="404.html">404 Page</a>
-                        <a class="collapse-item" href="blank.html">Blank Page</a>
+                        <a class="collapse-item" href="{{url(route('admin_manager_messenger'))}}">All Messengers</a>
                     </div>
                 </div>
             </li>

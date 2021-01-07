@@ -1,6 +1,6 @@
 
 
-@if ( $category)
+@if ( isset($category))
 {{$category->name}}
 @endif
 

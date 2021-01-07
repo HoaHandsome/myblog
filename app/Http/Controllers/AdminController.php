@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Article;
+use App\Models\Messenger;
 use App\User;
 use Auth;
 use Illuminate\Support\Str;
@@ -59,12 +60,12 @@ class AdminController extends Controller
     public function show_dashboard()
     {
         $count_article = Article::all()->count();
-        $count_category = Category::all()->count();
+        $categories = Category::all();
         $count_user = User::all()->count();
         $articles = Article::orderBy('created_at','desc')->paginate(7);
         return view('admin/main/dashboard')
         ->with('count_article',$count_article)
-        ->with('count_category',$count_category)
+        ->with('categories',$categories)
         ->with('count_user',$count_user)
         ->with('articles',$articles);
         
@@ -159,7 +160,7 @@ class AdminController extends Controller
         $new_category->slug = Str::slug($request->name ,'-');
        $new_category -> fill($request->all());
        $new_category->save();
-       return redirect()->route('admin_edit_category' ,['id'=> $new_category->id])->with('messenger','Chỉnh sửa thành công')->with('category',$new_category);
+       return redirect()->route('admin_edit_category' ,['slug'=> $new_category->slug])->with('messenger','Chỉnh sửa thành công')->with('category',$new_category);
     
     }
      public function delete_category($id)
@@ -177,11 +178,18 @@ class AdminController extends Controller
     }
     
     
-    /* comments */
+    /* messenger*/
     
-        public function show_comment()
+        public function manager_messenger()
         {
-            return view('admin/user/show_comment');
+            $messengers = Messenger::all();
+            return view('admin/user/manager_messenger')->with('messengers',$messengers);
+       
+        }
+        public function delete_messenger($id)
+        {
+            Messenger::destroy($id);
+            return redirect()->route('admin_manager_messenger');
        
         }
     /**

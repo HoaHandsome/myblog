@@ -40,8 +40,8 @@
                                             
                                         </tr>
                                        
+                                        @endforeach
                                                             </tbody>
-                                            @endforeach
                                                         </table>
                                                         {{$articles->links()}}
                                                     </div>

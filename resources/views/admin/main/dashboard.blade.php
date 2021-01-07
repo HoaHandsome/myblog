@@ -40,7 +40,7 @@
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                                 Category</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{$count_category}}</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{$categories->count()}}</div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-box-open fa-2x text-gray-300"></i>
@@ -103,6 +103,19 @@
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between bg-primary">
                                     <h6 class="m-0 font-weight-bold text-light">News article</h6>
+                                                                        <div class="dropdown no-arrow">
+                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                            aria-labelledby="dropdownMenuLink">
+                                            <div class="dropdown-header">Dropdown Header:</div>
+                                            <a class="dropdown-item" href="{{url(route('admin_create_article'))}}">Create new Article</a>
+                                            <a class="dropdown-item" href="{{url(route('admin_manager_article'))}}">View all Article</a>
+                                            {{-- <div class="dropdown-divider"></div> --}}
+                                        </div>
+                                    </div>
                                     
                                     
                                 </div>
@@ -120,10 +133,10 @@
                                       <tbody>
                                         @foreach ($articles as $article)
                                         <tr>
-                                            <th>{{$article->id}}</th>
-                                            <th>{{$article->name}}</th>
+                                            <th><a href="{{url('blog/article/'.$article->slug)}}">{{$article->id}}</a></th>
+                                            <th><a href="{{url('blog/article/'.$article->slug)}}">{{$article->name}}</a></th>
                                             <th>{{$article->user->name}}</th>
-                                            <th>{{$article->created_at}}</th> 
+                                            <th>{{date('d-m-Y', strtotime($article->created_at))}}</th> 
                                         </tr>
                                        
                                                             </tbody>
@@ -140,64 +153,28 @@
                                 <!-- Card Header - Dropdown -->
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between bg-primary">
-                                    <h6 class="m-0 font-weight-bold text-light">News Comment</h6>
-                                    <div class="dropdown no-arrow">
-                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                                            aria-labelledby="dropdownMenuLink">
-                                            <div class="dropdown-header">Dropdown Header:</div>
-                                            <a class="dropdown-item" href="#">Action</a>
-                                            <a class="dropdown-item" href="#">Another action</a>
-                                            <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item" href="#">Something else here</a>
-                                        </div>
-                                    </div>
+                                    <h6 class="m-0 font-weight-bold text-light">Category</h6>
+
                                 </div>
                                 <!-- Card Body -->
                                 <div class="card-body">
                                     <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
                                     <thead class="thead-dark">
                                         <tr>
-                                            <th>Name Article</th>
-                                            <th>Author</th>
-                                            <th>Comments</th>
+                                            <th>Name Category</th>
+                                            <th>Articles</th>
+                                            <th>Date create</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        @foreach ($categories as $category)
                                         <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
+                                            <th><a href="{{url('blog/category/'.$category->slug)}}">{{$category->name}}</a></th>
+                                            <th><a href="{{url('blog/category/'.$category->slug)}}">{{count($category->article)}}</a></th>
+                                            <th>{{date('d-m-Y', strtotime($category->created_at))}}</th> 
+                                                
                                         </tr>
-                                        
-                                        <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                        </tr>
-                                        
-                                        <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                        </tr>
-                                        
-                                        <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                        </tr>
-                                        
-                                        <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                        </tr>
-                                        
-                                        
+                                        @endforeach
                                     </tbody>
                                 </table>
 

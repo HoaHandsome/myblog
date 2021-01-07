@@ -11,7 +11,7 @@
 <img src="{{$article->avatar}}" alt="">
 {!!$article->content !!}
 {{$article->user->name}}
-<a href="{{url('blog/category/'.$article->category_id)}}">{{$article->category_id}}</a>
+<a href="{{url('blog/category/'.$article->category->slug)}}">{{$article->category->name}}</a>
 
 
 @foreach ($articles_relate as $article_relate)

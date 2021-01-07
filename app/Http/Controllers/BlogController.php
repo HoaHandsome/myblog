@@ -64,10 +64,10 @@ class BlogController extends Controller
       return view('blog\search_article')->with('articles',$articles);
 
     }
-    public function category_article($id)
+    public function category_article($slug)
     {
-      $category = Category::whereId($id)->first();
-      $articles = Article::where('category_id',$id)->orderBy('created_at','desc')->paginate(10);
+      $category = Category::whereSlug($slug)->first();
+      $articles = Article::where('category_id',$category->id)->orderBy('created_at','desc')->paginate(10);
       return view('blog\search_article')->with('articles',$articles)->with('category',$category);
 
     }

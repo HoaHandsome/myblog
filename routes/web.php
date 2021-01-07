@@ -44,21 +44,22 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('create_category','AdminController@create_category')->name('admin_create_category');
     Route::post('save_category','AdminController@save_category')->name('admin_save_category');
     Route::get('edit_category/{slug}','AdminController@edit_category')->name('admin_edit_category');
-    Route::post('save_as_category/{id}','AdminController@save_as_category')->name('admin_save_as_category');
+    Route::post('save_as_category/{slug}','AdminController@save_as_category')->name('admin_save_as_category');
     Route::get('delete_category/{id}','AdminController@delete_category');
-    /* Show and delete comment */
-    Route::get('comment','AdminController@show_comment')->name('admin_show_comment');
+    /* Show and delete messenger */
+    Route::get('manager_messenger','AdminController@manager_messenger')->name('admin_manager_messenger');
     Route::get('user','AdminController@show_user')->name('admin_show_user');
-    Route::get('delete_comment/{id}','AdminController@delete_comment');
+    Route::get('delete_messenger/{id}','AdminController@delete_messenger');
     
 });
 /* show all main */
 Route::group(['prefix' => ''], function () {
-    Route::get('home','MainController@show_home');
-    Route::get('about','MainController@show_about');
-    Route::get('experience','MainController@show_experience');
-    Route::get('blog','MainController@show_blog');
-    Route::get('contact','MainController@show_contact');
+    Route::get('','MainController@view_home')->name('home');
+    Route::get('home','MainController@view_home')->name('home');
+    Route::get('about','MainController@view_about')->name('about');
+    Route::get('experience','MainController@view_experience')->name('experience');
+    Route::get('blog','MainController@view_blog')->name('blog');
+    Route::get('contact','MainController@view_contact')->name('contact');
 });
 /* Show article */
 Route::group(['prefix' => 'blog'], function () {
@@ -71,6 +72,10 @@ Route::group(['prefix' => 'blog'], function () {
     /* Show article where user */
     /*  Route::get('article/user/{id}', 'BlogController@show_article_user'); */
 });
+/* Create Messenger */
+
+    Route::post('create', 'MessengerController@create_messenger')->name('create_messenger');
+
 
 
 

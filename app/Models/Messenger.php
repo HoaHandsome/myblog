@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Messenger extends Model
 {
         protected $fillable = [
-        'name','phone','mail','message'
+        'name','phone','mail','messenger'
     ];
 }
