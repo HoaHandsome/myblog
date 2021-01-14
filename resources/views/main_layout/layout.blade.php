@@ -7,9 +7,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://kit.fontawesome.com/66e5d31267.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/base.css">
-    <link rel="stylesheet" href="./css/responsive.css">
+    <link rel="stylesheet" href="{{url('/css/style.css')}}">
+    <link rel="stylesheet" href="{{url('./css/base.css')}}">
+    <link rel="stylesheet" href="{{url('./css/responsive.css')}}">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <title>Document</title>
 </head>
@@ -82,7 +82,7 @@
                         <h3 class="text-center"> <a href="{{url(route('blog'))}}">RECENT POST</a> </h3>
                         <div class="list-articles">
                                                         
-                            @foreach ($articles as $article)
+                            @foreach ($articles_recent as $article)
                             <!-- article -->
                             <div class="item-article flex-column">
                                 <div class="flex  flex-between">
@@ -148,7 +148,7 @@
                 <div class="card-group flex-column recent-post" >
                     <h3 class="text-center"><a href="{{url(route('blog'))}}">RECENT POST</a> </h3>
                     <div class="list-articles">
-                        @foreach ($articles as $article)
+                        @foreach ($articles_recent as $article)
                         <!-- article -->
 
                         <div class="item-article flex-column">
@@ -210,7 +210,11 @@
                          <p>Home</p>
                    </li>
                    <li class="flex-center">
-                       <a href="{{url(route('contact'))}}"><i class="far fa-bookmark"></i></a>
+                       <a href="{{url(route('about'))}}"><i class="far fa-user"></i></a>
+                       <p>About_me</p>
+                    </li>
+                   <li class="flex-center">
+                       <a href="{{url(route('experience'))}}"><i class="far fa-bookmark"></i></a>
                        <p>Experience</p>
                     </li>
                     <li class="flex-center">
@@ -228,7 +232,7 @@
 
     </section>
 </body>
-<script src="./js/script.js"></script>
+<script src="{{url('./js/script.js')}}"></script>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
     AOS.init();

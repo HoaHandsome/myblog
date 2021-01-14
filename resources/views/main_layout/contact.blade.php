@@ -10,7 +10,7 @@
                                     <li><a href="#"><i class="fas fa-phone-alt"></i></a></li>
                                     <li><a href="#"><i class="fab fa-github"></i></a></li>
                             </ul>
-                            <h3>FEEL FREE TO CONTACT ME</h3>
+                            <h3>THERE ARE MANY WAYS FOR YOU TO CONTACT TO ME. YOU CAN CONTACT TO ME VIA SOCIAL NETWORKS OR LEAVE A MESSAGE BELOW THE FORM. I'LL FEEDBACK TO YOU AS SOON AS POSSIBLE.</h3>
                             <form action="#">
                                 <div class="form-group">
                                     <label for="name">Your Name(required)</label>
