@@ -55,7 +55,7 @@ Route::group(['prefix' => 'admin'], function () {
 /* show all main */
 Route::group(['prefix' => ''], function () {
     Route::get('','MainController@view_home')->name('home');
-    Route::get('home','MainController@view_home')->name('home');
+    Route::get('hom','MainController@view_home')->name('home');
     Route::get('about','MainController@view_about')->name('about');
     Route::get('experience','MainController@view_experience')->name('experience');
     Route::get('blog','MainController@view_blog')->name('blog');

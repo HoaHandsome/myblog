@@ -1,0 +1,92 @@
+        /* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+        
+        
+        
+        
+        
+        #wrap-modal{
+            position: fixed;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(7, 7, 7, 0.61);
+            z-index: 100;
+        }
+        #group-picture{
+            margin: 50px 50px;
+            padding: 10px;
+            background-color: #fff;
+            width: 100%;
+        }
+        #group-picture img{
+          margin: 0 auto;
+          padding: 50px;
+        }
+        #wrap-modal .picture{
+            
+            position: relative;
+            overflow: hidden;
+            
+        }
+        #wrap-modal .box{
+            text-align: left;
+             width: 48%;
+            display: flex;
+            flex-direction: column;
+        }
+        #wrap-modal h2{
+             font-size: 30px;
+            line-height: 33px;
+            color: #000;
+            font-weight: 700;
+            margin-bottom: 50px;
+            text-transform: uppercase;
+        }
+        #wrap-modal i{
+             position: fixed;
+             right: 20px;
+             top: 20px;
+             color: #fff;
+         }
+/*          #wrap-modal .picture i{
+             position: absolute;
+             top: 50%;
+             color: #fff;
+             font-size: 35px;
+             right: -30px;
+             transition: all 0.2s;
+         }
+         .picture #left{
+             left: -30px;
+         }
+          #wrap-modal .picture:hover i{
+              right: 10px;
+          }
+        
+          #wrap-modal .picture:hover #left{
+              left: 10px;
+          }
+         */
+
