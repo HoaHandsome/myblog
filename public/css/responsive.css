@@ -1,4 +1,4 @@
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1300px) {
 
     #main nav p {
         left: auto;
@@ -204,11 +204,13 @@
      #main .container > nav li {
          display: inline-block;
     }
-    #main .container > nav ul {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
+  #main .container > nav ul {
+    max-width: 730px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+}
     #main .container > nav li {
     width: 50px;
     height: 50px;
@@ -218,7 +220,6 @@
 
            display: none !important;
     }
-
     #main nav p {
    display: none !important;
 
@@ -291,12 +292,11 @@
 .item-article .description{
     display: block;
 }
-  .links{
-    border: 0.1px solid rgb(201, 201, 201);
-    border-left: 0.1px solid transparent;
-    border-right: 0.1px solid transparent;
-    margin-bottom: 0px;
-}
+
+.links nav{
+
+    border: 1px solid transparent;
+    margin-top: 10px;
 }
 @media only screen and (max-width: 768px) {
 }

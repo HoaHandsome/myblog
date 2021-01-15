@@ -4,11 +4,12 @@ namespace App\Http\Controllers;
 use App\Models\Messenger;
 use App\Models\Article;
 use Illuminate\Http\Request;
+use App\Http\Requests\MessengerRequest;
 
 class MessengerController extends Controller
 {
 
-    public function create_messenger(Request $request)
+    public function create_messenger(MessengerRequest $request)
     {
         $articles_recent = Article::orderBy('created_at','desc')->paginate(2); 
         $messenger = new Messenger();

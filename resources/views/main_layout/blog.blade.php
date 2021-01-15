@@ -9,7 +9,7 @@
 
                     @foreach ($articles as $article)
                         
-                    <div class="wrap-group article flex-column" >
+                    <div class="wrap-group article flex-column" data-aos="fade-up" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out" >
                         <a href="{{url('blog/article/'.$article->slug)}}"><img src="{{url($article->avatar)}}" alt=""></a>
                         <h5 class="text-center title-article">
                              <a href="{{url('blog/article/'.$article->slug)}}">{{$article->name}}</a>
@@ -24,7 +24,7 @@
                             </div>
                         </div>
                         @endforeach
-                        <div class="links wrap-group">
+                        <div class="links">
 
                             {{ $articles->links()}}
                         </div>

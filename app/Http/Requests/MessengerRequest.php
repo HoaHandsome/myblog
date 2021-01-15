@@ -13,7 +13,7 @@ class MessengerRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -27,7 +27,8 @@ class MessengerRequest extends FormRequest
             'name'=>'required|max:255|min:3',
             'mail'=>'required|email',
             'phone'=>'required',
-            'subject'=>'required|min:3',
+            'subject'=>'required|min:5',
+            'messenger'=>'required|min:5',
         ];
     }
 }

@@ -958,7 +958,7 @@ svg {
     background-color: #fff;
     display: flex;
     justify-content: center;
-    
+    border: 1px solid #bfbfbf;
     margin-bottom: 10px;
 }
 .pagination{
