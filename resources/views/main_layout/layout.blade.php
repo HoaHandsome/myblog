@@ -138,7 +138,8 @@
                         </ul>
                     </div>
                     <div class="download_cv">
-                        <div class="button">DOWNLOAD CV</div>
+                        
+                        <a href="{{url('download')}}"  class="button">DOWNLOAD CV</a>
                     </div>
                 </div>
                 <!-- Recent post -->
@@ -173,10 +174,16 @@
                         @endforeach
                         <!-- article -->
 
-                        <div class="flex-center">
-                           <b> <a href="{{url(route('blog'))}}" class="text-center">VIEW MORE</a> </b>
+                            <div class="recent-post" id="search_left">
+                            <h3 class="text-center">SEARCH</h3>
+                            <form method="get" onsubmit="handle" action="{{url(route('search_article'))}}">
+                                @csrf
+                                <input type="text" placeholder="Search" name="content" value="{{old('content')}}">
+                                <button type="submit"> <i class="fas fa-search"></i></button>
+                            </form>
                         </div>
                     </div>
+                    
                 </div>
                 <!-- Recent post -->
                 <div class="card-group flex-column recent-post" id="fb">
@@ -204,7 +211,7 @@
             <nav>
                 <ul>
                     <li class="flex-center">
-                        <a href="#"><img  alt=""
+                        <a href="{{url(route('home'))}}"><img  alt=""
                                 src="{{url('storage/photos/2/me.jpg')}}"
                                 alt=""></a>
                          <p>Home</p>

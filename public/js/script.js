@@ -114,3 +114,58 @@ window.addEventListener('scroll', function scroll() {
 function handle() {
     e.preventDefault(); }
     
+
+function validateEmail(email) {
+    const valMail = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return valMail.test(email);
+}
+function validatePhoneNumber(phoneNumber) {
+    const valPhoneNumber = /^\+?(\d.*){3,}$/;
+    return valPhoneNumber.test(phoneNumber);
+}
+function ValidateForm() {
+    var gr_name = document.getElementById('gr_name');
+    var gr_mail = document.getElementById('gr_mail');
+    var gr_phone = document.getElementById('gr_phone');
+    var gr_subject = document.getElementById('gr_subject');
+    var gr_messenger = document.getElementById('gr_messenger');
+    var notification = document.getElementById('notification');
+
+    var name = document.forms['contact-form']['name'].value;
+    var mail = document.forms['contact-form']['mail'].value;
+    var phone = document.forms['contact-form']['phone'].value;
+    var subject = document.forms['contact-form']['subject'].value;
+    var messenger = document.forms['contact-form']['messenger'].value;
+    if(name.length < 2){
+        gr_name.classList.add('false');
+        notification.classList.add('false');
+        return false; 
+    }else if(!validateEmail(mail)){
+        gr_name.classList.remove('false');
+        gr_mail.classList.add('false');
+        notification.classList.add('false');
+        return false;
+    }else if(!validatePhoneNumber(phone)){
+        gr_mail.classList.remove('false');
+        gr_phone.classList.add('false');
+        notification.classList.add('false');
+        return false;
+    }
+    else if(subject.length < 5){
+        gr_phone.classList.remove('false');
+        gr_subject.classList.add('false');
+        notification.classList.add('false');
+        return false;
+    }else if(messenger.length < 5){
+        gr_subject.classList.remove('false');
+        gr_messenger.classList.add('false');
+        notification.classList.add('false');
+        return false;
+    }
+}
+/*
+var messenger = document.forms['contact-form']['messenger'].value;
+if(1 < 3)
+{
+    return false;
+}  */

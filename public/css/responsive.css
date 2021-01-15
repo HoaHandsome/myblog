@@ -1,8 +1,19 @@
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1200px) {
+
+    #main nav p {
+        left: auto;
+    right: calc(100% + 20px) !important;}
+    
+    #main nav li::after {
+    left: auto;
+    right: calc(100% + 16px) !important;
+    
+    }
+}
+    @media only screen and (max-width: 1024px) {
     .list-date .date {
      padding: 5px 5px;
     }
- 
 }
 @media only screen and (max-width: 990px) {
     /*  */
@@ -212,6 +223,9 @@
    display: none !important;
 
 }
+ #search_left{
+     display: none;
+ }
    
     /* ----------content----- */
     #main .container > nav li a {

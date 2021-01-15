@@ -2,19 +2,24 @@
 @extends('main_layout.layout')
 @section('content')
   <div class="wrap-group" >
-                           <h2>Search <i class="fas fa-search"></i></h2>
-                        <h5>There are {{$articles->count()}} sesult for " {{$request}} "</h5>
+                          @if (isset($category))
+                          <h2>Category {{$category->name}}</h2>
+                          <h5>There are  {{$articles->total()}} articles in {{$category->name}} topic </h5>
+                          @else
+                          <h2>Search <i class="fas fa-search"></i></h2>
+                          <h5>There are {{$articles->total()}} sesult for " {{$request }} "</h5>
+                           @endif
 
   </div>
 
 
-@if ( isset($category))
+{{-- @if ( isset($category))
 {{$category->name}}
 @endif
 
+ --}}
 
-
-@if ($articles->count() ==0)
+@if ($articles->total() ==0)
 <div class="wrap-group">
     <p>No posts yet</p>
 </div>

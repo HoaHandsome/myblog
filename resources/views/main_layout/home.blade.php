@@ -9,7 +9,7 @@
                             court arguing and trying cases. During his practice at “SomeLawFirm and Partners” Morris defended one of the top
                             corporations in the world and government agencies in premises liability, product liability and employment discrimination
                             matters.</p>  
-                            <a href="#" class="button">Read More</a>              
+                            <a href="{{url(route('about'))}}" class="button">Read More</a>              
                         </div>
                         <!-- information -->
                         <div class="list-item flex-between">
@@ -315,38 +315,40 @@
                                     <li><a href="#"><i class="fab fa-github"></i></a></li>
                             </ul>
                             <h3>FEEL FREE TO CONTACT ME</h3>
-                            <form method="POST" action="{{route('create_messenger')}}">
+                           <form method="POST" action="{{route('create_messenger')}}" id="contact-form" onsubmit="return ValidateForm()" id="contact-form" class="contact-form">
                                 @csrf
-                                <div class="form-group">
+                                <div class="form-group" id="gr_name">
                                     <label for="name">Your Name(required)</label>
                                     <input type="text" id="name" name="name">
                                     <span>The name entered is invalid.</span>
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group" id="gr_mail">
                                     <label for="mail">Your Mail(required)</label>
                                     <input type="mail" id="mail" name="mail">
                                     <span>The Mail entered is invalid.</span>
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group" id="gr_phone">
                                     <label for="phone">Your Phone(required)</label>
                                     <input type="text" id="phone" name="phone">
                                     <span>The phone entered is invalid.</span>
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group" id="gr_subject">
                                     <label for="subject">Subject</label>
                                     <input type="text" id="subject" name="subject" >
                                     <span>The Subject entered is invalid.</span>
                                 </div>
-                                <div class="form-group">
-                                    <label for="messenger">Subject</label>
+                                <div class="form-group" id="gr_messenger">
+                                    <label for="messenger">Message</label>
                                     <textarea name="messenger" id="messenger" cols="30" rows="10"></textarea>
+                                    <span>The Message entered is invalid.</span>
                                 </div>
                                 <div class="form-group">
                                     <button class="button" type="submit">Send</button>
                                 </div>
-                                <div class="notification text-center">
+                                <div id="notification" class="text-center">
                                     One or more fields have an error. Please check and try again.
                                 </div>
+
                             </form>
                         </div>
                         <iframe

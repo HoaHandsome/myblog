@@ -44,4 +44,8 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Models\Article');
     }
+        public function rule()
+    {
+        return $this->belongsTo('App\Models\Rule','rule_id');
+    }
 }

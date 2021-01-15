@@ -11,25 +11,15 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Auth::routes();
 
-Route::get('/home','HomeController@index')->name('home');
+Route::get('/home_admin','HomeController@index')->name('home');
+Route::get('/login_admin','MainController@login_admin')->name('login_admin');
 /* manage admin */
 
-Route::get('logon', function () {
-    return view('auth/logon');
-});     
-Route::get('registerr', function () {
-    return view('auth/registerr');
-});     
 
-
-
-Route::group(['prefix' => 'admin'], function () {
+Route::group(['prefix' => 'admin','middleware' => 'rule:admin'], function () {
     /* Show and edit article */
     Route::get('','AdminController@show_dashboard')->name('admin_show_dashboard');
     Route::get('view_article/{slug}','AdminController@view_article')->name('admin_view_article');
@@ -55,7 +45,7 @@ Route::group(['prefix' => 'admin'], function () {
 /* show all main */
 Route::group(['prefix' => ''], function () {
     Route::get('','MainController@view_home')->name('home');
-    Route::get('hom','MainController@view_home')->name('home');
+    Route::get('home','MainController@view_home')->name('home');
     Route::get('about','MainController@view_about')->name('about');
     Route::get('experience','MainController@view_experience')->name('experience');
     Route::get('blog','MainController@view_blog')->name('blog');
@@ -74,9 +64,10 @@ Route::group(['prefix' => 'blog'], function () {
 });
 /* Create Messenger */
 
-    Route::post('create', 'MessengerController@create_messenger')->name('create_messenger');
+    Route::post('feedback', 'MessengerController@create_messenger')->name('create_messenger');
 
-
+/* download cv */
+Route::get('download/','DownloadController@download')->name('download')->middleware('auth');
 
 
 
@@ -93,9 +84,3 @@ Route::get('/login-google', 'SocialController@googleRedirect')->name('login_goog
 Route::get('/google_callback', 'SocialController@loginWithGoogle');
 
 
- Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
-     \UniSharp\LaravelFilemanager\Lfm::routes();
- });
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

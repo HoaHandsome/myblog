@@ -24,7 +24,7 @@ class MainController extends Controller
   }
   public function view_blog()
   {
-        $articles = Article::paginate(2);
+        $articles = Article::paginate(10);
         $articles_recent = Article::orderBy('created_at','desc')->paginate(2);
       return view('main_layout/blog')->with('articles_recent',$articles_recent)->with('articles',$articles);
   }
@@ -32,5 +32,10 @@ class MainController extends Controller
   {
         $articles_recent = Article::orderBy('created_at','desc')->paginate(2);
       return view('main_layout/contact')->with('articles_recent',$articles_recent);
+  }
+  public function login_admin()
+  {
+        $articles_recent = Article::orderBy('created_at','desc')->paginate(2);
+      return view('auth/login-admin')->with('articles_recent',$articles_recent);
   }
 }

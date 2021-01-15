@@ -10,36 +10,38 @@
                                     <li><a href="#"><i class="fas fa-phone-alt"></i></a></li>
                                     <li><a href="#"><i class="fab fa-github"></i></a></li>
                             </ul>
-                            <h3>THERE ARE MANY WAYS FOR YOU TO CONTACT TO ME. YOU CAN CONTACT TO ME VIA SOCIAL NETWORKS OR LEAVE A MESSAGE BELOW THE FORM. I'LL FEEDBACK TO YOU AS SOON AS POSSIBLE.</h3>
-                            <form action="#">
-                                <div class="form-group">
+                            <h3>FEEL FREE TO CONTACT ME.</h3>
+                            <form method="POST" action="{{route('create_messenger')}}" id="contact-form" onsubmit="return ValidateForm()" id="contact-form" class="contact-form">
+                                @csrf
+                                <div class="form-group" id="gr_name">
                                     <label for="name">Your Name(required)</label>
                                     <input type="text" id="name" name="name">
                                     <span>The name entered is invalid.</span>
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group" id="gr_mail">
                                     <label for="mail">Your Mail(required)</label>
                                     <input type="mail" id="mail" name="mail">
                                     <span>The Mail entered is invalid.</span>
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group" id="gr_phone">
                                     <label for="phone">Your Phone(required)</label>
                                     <input type="text" id="phone" name="phone">
                                     <span>The phone entered is invalid.</span>
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group" id="gr_subject">
                                     <label for="subject">Subject</label>
                                     <input type="text" id="subject" name="subject" >
                                     <span>The Subject entered is invalid.</span>
                                 </div>
-                                <div class="form-group">
-                                    <label for="messenger">Subject</label>
+                                <div class="form-group" id="gr_messenger">
+                                    <label for="messenger">Message</label>
                                     <textarea name="messenger" id="messenger" cols="30" rows="10"></textarea>
+                                    <span>The Message entered is invalid.</span>
                                 </div>
                                 <div class="form-group">
                                     <button class="button" type="submit">Send</button>
                                 </div>
-                                <div class="notification text-center">
+                                <div id="notification" class="text-center">
                                     One or more fields have an error. Please check and try again.
                                 </div>
 
