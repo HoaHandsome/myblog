@@ -216,9 +216,8 @@
     height: 50px;
     margin: 20px;
     }
-       #main nav li::after {
-
-           display: none !important;
+    #main nav li::after {
+        display: none !important;
     }
     #main nav p {
    display: none !important;
@@ -267,7 +266,7 @@
     }
 
     .list-date .date {
-        padding: 3.5px 10px;
+        padding: 5.5px 10px;
         margin: 10px 0;
     }
     .list-articles > .flex-center {
@@ -297,6 +296,7 @@
 
     border: 1px solid transparent;
     margin-top: 10px;
+}
 }
 @media only screen and (max-width: 768px) {
 }
@@ -359,8 +359,7 @@
         padding-bottom: 20px;
 
     }
-    .list-date .date {
-        padding: 3.5px 10px;}
+
 
     .wrap-group .list-item:first-child {
         margin-bottom: 0;

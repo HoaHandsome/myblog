@@ -49,7 +49,7 @@ class BlogController extends Controller
     {
         $articles_recent = Article::orderBy('created_at','desc')->paginate(2);
         $article = Article::where('slug',$slug)->first();
-        $articles_relate = Article::whereNotIn('slug',[$article->slug])->where('category_id', $article->category_id)->orderBy('created_at','desc')->paginate(10);
+        $articles_relate = Article::whereNotIn('slug',[$article->slug])->where('category_id', $article->category_id)->orderBy('created_at','desc')->paginate(2);
         return view('blog\article')->with('article',$article)->with('articles_relate',$articles_relate)->with('articles_recent',$articles_recent);
     }
 

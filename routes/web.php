@@ -13,12 +13,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Auth::routes();
-
 Route::get('/home_admin','HomeController@index')->name('home');
 Route::get('/login_admin','MainController@login_admin')->name('login_admin');
 /* manage admin */
-
-
 Route::group(['prefix' => 'admin','middleware' => 'rule:admin'], function () {
     /* Show and edit article */
     Route::get('','AdminController@show_dashboard')->name('admin_show_dashboard');
@@ -39,8 +36,7 @@ Route::group(['prefix' => 'admin','middleware' => 'rule:admin'], function () {
     /* Show and delete messenger */
     Route::get('manager_messenger','AdminController@manager_messenger')->name('admin_manager_messenger');
     Route::get('user','AdminController@show_user')->name('admin_show_user');
-    Route::get('delete_messenger/{id}','AdminController@delete_messenger');
-    
+    Route::get('delete_messenger/{id}','AdminController@delete_messenger');    
 });
 /* show all main */
 Route::group(['prefix' => ''], function () {
@@ -63,19 +59,10 @@ Route::group(['prefix' => 'blog'], function () {
     /*  Route::get('article/user/{id}', 'BlogController@show_article_user'); */
 });
 /* Create Messenger */
-
     Route::post('feedback', 'MessengerController@create_messenger')->name('create_messenger');
-
 /* download cv */
 Route::get('download/','DownloadController@download')->name('download')->middleware('auth');
 
-
-
-
-Route::get('test', function ()
-{
-   return view('admin/article/layout'); 
-});
 
 Route::get('/login-facebook', 'SocialController@facebookRedirect')->name('login_facebook');
 Route::get('/facebook_callback', 'SocialController@loginWithFacebook');
@@ -84,3 +71,12 @@ Route::get('/login-google', 'SocialController@googleRedirect')->name('login_goog
 Route::get('/google_callback', 'SocialController@loginWithGoogle');
 
 
+Route::get('/migrate', function() {
+    $exitCode = Artisan::call('db:seed');
+    return 'DONE'; //Return anything
+});
+
+Route::get('/clear-cache', function() {
+    $exitCode = Artisan::call('config:cache');
+    return 'DONE'; //Return anything
+});

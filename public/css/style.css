@@ -1,14 +1,14 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
 
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Yusei Magic', sans-serif;
+    font-family: 'Cabin', sans-serif;
 }
 
 html {
@@ -151,7 +151,7 @@ header ul li a{
     font-weight: 700;
 }
 header ul li a:hover{
-    color: #223D72;
+    color: #03112e;
 }
 /* menu responsive */
 header #menu-sidebar{
@@ -420,14 +420,14 @@ header #menu-sidebar{
     height: 100%;
     background-color: #223D72;
     border-radius: 5px;
-    width: 80%;
+    width: 95%;
 }
 
 .box .list-skill:nth-child(2) .skill::after{
-    width: 90%;
+    width: 80%;
 }
 .box .list-skill:nth-child(3) .skill::after{
-    width: 50%;
+    width: 75%;
 }
 .box .skill-number{
     position: absolute;
@@ -444,7 +444,7 @@ header #menu-sidebar{
     padding-right: 40px;
 }
 .list-date .date{
-    padding:  3.5px 10px;
+    padding:  5.5px 10px;
     background-color: #223D72;
     color: #fff;
     position: relative;

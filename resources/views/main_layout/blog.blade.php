@@ -2,7 +2,7 @@
 @section('content')
                        <div class="wrap-group">
                         <h2>blog</h2>
-                        <h5>This is my blog where i can wire about my life</h5>
+                        <h5>This is my blog where i can wirte about my life.</h5>
                     </div>
                     <!-- article -->
 

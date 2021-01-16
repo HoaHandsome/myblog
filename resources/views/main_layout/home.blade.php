@@ -5,10 +5,7 @@
                         <!-- item list -->
                         <div class="list-item">
                             <h2>ABOUT ME</h2>
-                            <p>Morris Schultz, Attorney with 10+ years experience in legal consultancy. He has spent significant time on his feet in
-                            court arguing and trying cases. During his practice at “SomeLawFirm and Partners” Morris defended one of the top
-                            corporations in the world and government agencies in premises liability, product liability and employment discrimination
-                            matters.</p>  
+                            <p>I'm Hoa. I'm IT Helpdesk and Web Developer. Currently I'm majoring in IT at night. I have 2 years of experience as an office worker and 1 year in IT technical support. In work and in life, I always set the highest standards for myself. That is why I am always in the top of the fields where I study, i work and  I participate. My biggest strength is my ability to learn and absorb very quickly. I always try to do my best at my job and find ways to improve my productivity.</p>  
                             <a href="{{url(route('about'))}}" class="button">Read More</a>              
                         </div>
                         <!-- information -->
@@ -22,11 +19,11 @@
                                   </div>
                                   <div class="flex-between">
                                       <h6>D.O.B.</h6>
-                                      <p>05 Sep 1986</p>
+                                      <p>25 Nov 1995</p>
                                   </div>
                                   <div class="flex-between">
                                       <h6>ADDRESS</h6>
-                                      <p>24058, Belgium, Brussels, Liutte 27, BE</p>
+                                      <p>Sen Thuy, Le Thuy, Quang Binh</p>
                                   </div>
                                   <div class="flex-between">
                                       <h6>E-MAIL</h6>
@@ -44,27 +41,27 @@
                                 <h4 class="box-title">My skill</h4>
                                 <!-- list skill -->
                                 <div class="list-skill flex-column">
-                                    <p>Intellectual Property</p>
-                                    <div class="skill-bar">
+                                    <p>Network Administrator</p>
+                                    <div class="skill-bar" data-aos="fade-right">
                                         <div class="skill"></div>
                                     </div>
-                                    <div class="skill-number">90%</div>
+                                    <div class="skill-number">80%</div>
                                 </div>
                                 <!-- list skill -->
                                 <div class="list-skill flex-column">
-                                    <p>Intellectual Property</p>
-                                    <div class="skill-bar">
+                                    <p>Web Design( Laravel + Vue + Js + ...)</p>
+                                    <div class="skill-bar" data-aos="fade-right">
                                         <div class="skill"></div>
                                     </div>
-                                    <div class="skill-number">90%</div>
+                                    <div class="skill-number">75%</div>
                                 </div>
                                 <!-- list skill -->
                                 <div class="list-skill flex-column">
-                                    <p>Intellectual Property</p>
-                                    <div class="skill-bar">
+                                    <p>Office( Excel + Vba + Word ...)</p>
+                                    <div class="skill-bar" data-aos="fade-right">
                                         <div class="skill"></div>
                                     </div>
-                                    <div class="skill-number">90%</div>
+                                    <div class="skill-number">95%</div>
                                 </div>
                             </div>
                         </div>
@@ -75,73 +72,124 @@
                             <!-- list item -->
                             <div class="list-job flex">
                                 <div class="list-date">
-                                    <div class="date text-center">2010-2015</div>
+                                    <div class="date text-center">2015-2018</div>
                                 </div>
                                 <div class="introduce-job flex-column">
-                                    <h4>Bebsi v. Goga Gola</h4>
-                                    <h6>Formula for Goga Gola</h6>
-                                    <p>Goga Gola was invented amazing formula for headache which was properly copyrighted and kept in secret. Bebsi’s
-                                    management argued that formula was invented by Bebsi’s scientists.</p>
+                                    <h4>Mondelez Kinh Đô</h4>
+                                    <h6>Warehouse Staff For Mondelez Kinh Đô</h6>
+                                    <p>Working in the warehouse department, supporting import and export goods and managing goods in the warehouse. Processing and providing data for accountants.</p>
                                 </div>
                                 
                             </div>
                             <!-- list item -->
                             <div class="list-job flex">
                                 <div class="list-date">
-                                    <div class="date text-center">2010-2015</div>
+                                    <div class="date text-center">2019-2019</div>
                                 </div>
                                 <div class="introduce-job flex-column">
-                                    <h4>Bebsi v. Goga Gola</h4>
-                                    <h6>Formula for Goga Gola</h6>
-                                    <p>Goga Gola was invented amazing formula for headache which was properly copyrighted and kept in secret. Bebsi’s
-                                    management argued that formula was invented by Bebsi’s scientists.</p>
+                                    <h4>Vietnam - YCH Group</h4>
+                                    <h6>Office For Vietnam - YCH Group</h6>
+                                    <p>Working on Oracle system data processing system. During the work, I wrote 2 excel files and 1 dataload file. Achieve a prize of creative ideas for improving work.</p>
                                 </div>
                                 
                             </div>
                             <!-- list item -->
                             <div class="list-job flex">
                                 <div class="list-date">
-                                    <div class="date text-center">2010-2015</div>
+                                    <div class="date text-center">2019-2021</div>
                                 </div>
                                 <div class="introduce-job flex-column">
-                                    <h4>Bebsi v. Goga Gola</h4>
-                                    <h6>Formula for Goga Gola</h6>
-                                    <p>Goga Gola was invented amazing formula for headache which was properly copyrighted and kept in secret. Bebsi’s
-                                    management argued that formula was invented by Bebsi’s scientists.</p>
+                                    <h4>Cty TNHH BAO BI VIET</h4>
+                                    <h6>Admin, IT Helpdesk for Cty TNHH BAO BI VIET </h6>
+                                    <p>Make production reports. Troubleshooting network system and repairing device.</p>
                                 </div>
                                 
                             </div>
                         </div>
 
                     </div>
+                    <div class="wrap-group" data-aos="fade-up" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out" id="education">
+                        <h2>Education</h2>
+                        <div class="group-job flex-column">
+                            <!-- list item -->
+                            <div class="list-job flex">
+                                <div class="list-date">
+                                    <div class="date text-center">2018-2021</div>
+                                </div>
+                                <div class="introduce-job flex-column">
+                                    <h4>Binh Duong Industrial Intermediate School</h4>
+                                    <h6>Majoring in IT </h6>
+                                    <p>I was always have high score when I was in school. Was the captain of the youth assault team.</p>
+                                </div>
+                                
+                            </div>
+                            <!-- list item -->
+                            <div class="list-job flex">
+                                <div class="list-date">
+                                    <div class="date text-center">2019-2020</div>
+                                </div>
+                                <div class="introduce-job flex-column">
+                                    <h4>Saigon American English (SAS) </h4>
+                                    <h6>Learn English communication</h6>
+                                    <p>When i learn at SAS , this time make me confident and make me a lot of knowledge. Now i can speak english fluently, i feed confident more when i speak english with foreigner . </p>
+                                </div>
+                                
+                            </div>
+                         
+                            <!-- list item -->
+                            <div class="list-job flex">
+                                <div class="list-date">
+                                    <div class="date text-center">2020-2021</div>
+                                </div>
+                                <div class="introduce-job flex-column">
+                                    <h4>Fullstack web developer course in Laptrinhcuocsong.com</h4>
+                                    <h6>Fullstack web developer </h6>
+                                    <p>Learn about how to create a website. Start learning from the frontend to the backend. Course included Html + Css + Js + Git + Vue + Php + Laravel. You can see detail about course at <a href="https://laptrinhcuocsong.com/khoa-hoc-full-stack-web-developer.html">here</a>.</p>
+                                </div>
+                                
+                            </div>
+                               <!-- list item -->
+                            <div class="list-job flex">
+                                <div class="list-date">
+                                    <div class="date text-center">2021-...</div>
+                                </div>
+                                <div class="introduce-job flex-column">
+                                    <h4>Chinese Language Center </h4>
+                                    <h6>Learn Chinese Language</h6>
+                                    <p>I don't limit my abilities in any of these areas. So I decided to learn a new language that is Chinese. If i still live i'll learn.</p>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
                     <div class="wrap-group" data-aos="fade-up" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out" id="other">
                         <h2>Other</h2>
                         <div class="list-item flex-between">
                             <!-- box -->
                           <div class="box">
-                              <h4 class="box-title">Some Statistics</h4>
+                              <h4 class="box-title">My Strengths</h4>
                               <div class="statistics-group flex">
                                  
                                   <!-- list -->
-                                  <div class="statistic-item flex-column">
-                                    <svg>
-                                        <circle stroke-dasharray="200" stroke-dashoffset="0" cx="50" cy="50" r="40"  stroke="#223D72" stroke-width="6" fill="transparent" />
+                                  <div class="statistic-item flex-column" data-aos="zoom-in">
+                                    <svg >
+                                        <circle stroke-dasharray="233" stroke-dashoffset="0" cx="50" cy="50" r="40"  stroke="#223D72" stroke-width="6" fill="transparent" />
                                     </svg>
-                                    <p class="text-center">Winning Cases</p>
+                                    <p class="text-center">Learn Fast</p>
                                   </div>
                                   <!-- list -->
-                                  <div class="statistic-item flex-column">
+                                  <div class="statistic-item flex-column" data-aos="zoom-in">
                                     <svg>
-                                        <circle stroke-dasharray="200" stroke-dashoffset="0" cx="50" cy="50" r="40"  stroke="#223D72" stroke-width="6" fill="transparent" />
+                                        <circle stroke-dasharray="235" stroke-dashoffset="0" cx="50" cy="50" r="40"  stroke="#223D72" stroke-width="6" fill="transparent" />
                                     </svg>
-                                    <p class="text-center">Winning Cases</p>
+                                    <p class="text-center">Working Group</p>
                                   </div>
                                   <!-- list -->
-                                  <div class="statistic-item flex-column">
+                                  <div class="statistic-item flex-column" data-aos="zoom-in">
                                     <svg>
-                                        <circle stroke-dasharray="200" stroke-dashoffset="0" cx="50" cy="50" r="40"  stroke="#223D72" stroke-width="6" fill="transparent" />
+                                        <circle stroke-dasharray="225" stroke-dashoffset="0" cx="50" cy="50" r="40"  stroke="#223D72" stroke-width="6" fill="transparent" />
                                     </svg>
-                                    <p class="text-center">Winning Cases</p>
+                                    <p class="text-center">Enthusiasm</p>
                                   </div>
                                 
                               </div>
@@ -162,7 +210,7 @@
                                             <i class="fas fa-circle" data-aos="fade-right"></i>
                                             <i class="fas fa-circle" data-aos="fade-right"></i>
                                             <i class="fas fa-circle" data-aos="fade-right"></i>
-                                            <i class="far fa-circle" data-aos="fade-right"></i>
+                                            <i class="fas fa-circle" data-aos="fade-right"></i>
                                             <i class="far fa-circle" data-aos="fade-right"></i>
                                           </div>
                                           <span>nature</span>
@@ -170,7 +218,7 @@
                                   </div>
                                   <!-- list -->
                                   <div class="list-skill">
-                                      <p>Vietnamese</p>
+                                      <p>English</p>
                                       <div class="flex-between language">
                                           <div class="flex-between dot">
                                             <i class="fas fa-circle" data-aos="fade-right"></i>
@@ -183,25 +231,24 @@
                                             <i class="far fa-circle" data-aos="fade-right"></i>
                                             <i class="far fa-circle" data-aos="fade-right"></i>
                                           </div>
-                                          <span>nature</span>
+                                          <span>fluent</span>
                                       </div>
                                   </div>
                                   <!-- list -->
                                   <div class="list-skill">
-                                      <p>Vietnamese</p>
+                                      <p>Chinese</p>
                                       <div class="flex-between language">
                                           <div class="flex-between dot">
                                             <i class="fas fa-circle" data-aos="fade-right"></i>
                                             <i class="fas fa-circle" data-aos="fade-right"></i>
                                             <i class="fas fa-circle" data-aos="fade-right"></i>
-                                            <i class="fas fa-circle" data-aos="fade-right"></i>
-                                            <i class="fas fa-circle" data-aos="fade-right"></i>
-                                            <i class="fas fa-circle" data-aos="fade-right"></i>
-                                            <i class="fas fa-circle" data-aos="fade-right"></i>
+                                            <i class="far fa-circle" data-aos="fade-right"></i>
+                                            <i class="far fa-circle" data-aos="fade-right"></i>
+                                            <i class="far fa-circle" data-aos="fade-right"></i>
                                             <i class="far fa-circle" data-aos="fade-right"></i>
                                             <i class="far fa-circle" data-aos="fade-right"></i>
                                           </div>
-                                          <span>nature</span>
+                                          <span>newbie</span>
                                       </div>
                                   </div>
                               </div>
@@ -212,19 +259,19 @@
                             <div class="interests flex">
                                 <!-- list -->
                                 <div class="interests-item flex">
-                                    <i class="fas fa-code"></i> <p>code</p>
+                                    <i class="fas fa-code"></i> <p>Code</p>
                                 </div>
                                 <!-- list -->
                                 <div class="interests-item flex">
-                                    <i class="fas fa-book"></i> <p>book</p>
+                                    <i class="fas fa-book"></i> <p>Book</p>
                                 </div>
                                 <!-- list -->
                                 <div class="interests-item flex">
-                                    <i class="fas fa-pen"></i> <p>write content</p>
+                                    <i class="fas fa-pen"></i> <p>Write content</p>
                                 </div>
                                 <!-- list -->
                                 <div class="interests-item flex">
-                                    <i class="fas fa-coffee"></i> <p>coffee</p>
+                                    <i class="fas fa-coffee"></i> <p>Coffee</p>
                                 </div>
                                 <!-- list -->
                                 <div class="interests-item flex">
@@ -239,57 +286,57 @@
                         <div>
                             <div id="btn-contatransparent" class="flex">
                                 <div class="div btn-list active" onclick="filterSelection('all')">All </div>
-                                <div class="div btn-list" onclick="filterSelection('design')">Design </div>
-                                <div class="div btn-list" onclick="filterSelection('team')">Team </div>
                                 <div class="div btn-list" onclick="filterSelection('work')">Work </div>
+                                <div class="div btn-list" onclick="filterSelection('friends')">Friends</div>
+                                <div class="div btn-list" onclick="filterSelection('other')">Other</div>
                             </div>
                             <div class="img-container">
-                                <div class="filter-div design" data-aos="fade-down-right">
+                                <div class="filter-div work" data-aos="fade-down-right">
                                     <img src="{{url('storage/photos/2/blog.png')}}" alt="">
                                     <div class="description-picture">
-                                        Design
+                                        Work
                                     </div>
                                     
                                 </div>
-                                <div class="filter-div team">
+                                <div class="filter-div friends" data-aos="zoom-in-up">
                                     <img src="{{url('storage/photos/2/blog2.png')}}" alt="">
                                     <div class="description-picture">
-                                        Team
+                                        Friends
                                     </div>
                                    
                                 </div>
-                                <div class="filter-div design">
+                                <div class="filter-div work" data-aos="zoom-in-down">
                                     <img src="{{url('storage/photos/2/blog3.png')}}" alt="">
                                     <div class="description-picture">
-                                          Design
+                                          Work
                                     </div>
                                    
                                 </div>
-                                <div class="filter-div design team" data-aos="flip-left">
+                                <div class="filter-div work other" data-aos="flip-left">
                                     <img src="{{url('storage/photos/2/blog.png')}}" alt="">
                                     <div class="description-picture">
-                                        This is my picture
+                                        Other
                                     </div>
                                    
                                 </div>
-                                <div class="filter-div work"  data-aos="fade-up">
+                                <div class="filter-div friends"  data-aos="fade-up">
                                     <img src="{{url('storage/photos/2/blog2.png')}}" alt="">
                                     <div class="description-picture">
-                                        This is my picture
+                                        Friends
                                     </div>
                                   
                                 </div>
                                 <div class="filter-div work" data-aos="fade-up">
                                     <img src="{{url('storage/photos/2/blog.png')}}" alt="">
                                     <div class="description-picture">
-                                        This is my picture
+                                        Work
                                     </div>
                                    
                                 </div>
-                                <div class="filter-div team"data-aos="fade-up">
+                                <div class="filter-div other"data-aos="fade-up">
                                     <img src="{{url('storage/photos/2/blog.png')}}" alt="">
                                     <div class="description-picture">
-                                        This is my picture
+                                        Other
                                     </div>
                                    
                                 </div>
@@ -303,7 +350,7 @@
                             <p>This is my blog. Where i can write about my live, my job and experience in my life. Sometime this habit make me happy
                             after a long day. I sit down and have time think about myself, think about something in the future or lookback the past.</p>
                         </div>
-                        <a href="blog.html" class="button">Visit Blog</a>
+                        <a href="{{url(route('blog'))}}" class="button">Visit Blog</a>
                     </div>
                     <div class="wrap-group" data-aos="fade-up" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out" id="contact">
                         <h2>contact</h2>

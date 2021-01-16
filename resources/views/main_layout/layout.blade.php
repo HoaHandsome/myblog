@@ -1,17 +1,28 @@
 
-
-
  <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="https://kit.fontawesome.com/66e5d31267.js" crossorigin="anonymous"></script>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/> 
+    <meta property='og:image' content='{{url('storage/photos/2/logo.png')}}' />
+    <meta property="og:image:width" content="250" />
+    <meta property="og:image:height" content="250" />
+    <meta id="metaDescription" name="description" content="I'm Hoa. I'm IT Helpdesk and Web Developer." />
+    <meta property="og:description" content="I'm Hoa. I'm IT Helpdesk and Web Developer." />
+    <meta property="og:type" content="article" /> 
+    <meta content='index, follow' name='robots'/>
+    <meta http-equiv="REFRESH" content="1800" />
+    <meta property="og:image:type" content="image/png" /> 
+    <link rel="icon" type="image/x-icon" href="{{url('storage/photos/2/logo.png')}}">
+
+
+    <script src="https://kit.fontawesome.com/66e5d31267.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{url('/css/style.css')}}">
     <link rel="stylesheet" href="{{url('./css/base.css')}}">
     <link rel="stylesheet" href="{{url('./css/responsive.css')}}">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <title>Document</title>
+    <title>Le Van Hoa</title>
 </head>
 <body>
 <!-- mask -->
@@ -38,7 +49,7 @@
 <!-- header -->
 <header>
     <div class="container flex-between">
-        <h1><a href="#">V.Hòa</a></h1>
+        <h1><a href="{{url(route('home'))}}">V.Hòa</a></h1>
         <i class="fas fa-bars" onclick="openMenu()" id="bars"></i>
         <nav id="nav-bar">
             <div id="mask-menu" onclick="closeMenu()"></div>
@@ -57,8 +68,8 @@
                                 src="{{url('storage/photos/2/me.jpg')}}"
                                 alt="">
                         </div>
-                        <h2 class="text-center">le van hoa</h2>
-                        <p class="text-center">it-web</p>
+                        <h2 class="text-center">Le Van Hoa (John)</h2>
+                        <p class="text-center">IT-Web Design</p>
                         <ul>
                             <li><a href="https://www.facebook.com/lehoa.strong/"><i class="fab fa-facebook-f"></i></a></li>
                             <li><a href="mailto:lehoa.strong@gmail.com"><i class="fas fa-envelope"></i></a></li>
@@ -128,8 +139,8 @@
                                 src="{{url('storage/photos/2/me.jpg')}}"
                                 alt="">
                         </div>
-                        <h2 class="text-center">le van hoa</h2>
-                        <p class="text-center">it-web</p>
+                        <h2 class="text-center">Le Van Hoa (John)</h2>
+                        <p class="text-center">IT-Web Design</p>
                         <ul>
                             <li><a href="https://www.facebook.com/lehoa.strong/"><i class="fab fa-facebook-f"></i></a></li>
                             <li><a href="mailto:lehoa.strong@gmail.com"><i class="fas fa-envelope"></i></a></li>

@@ -19,7 +19,6 @@
                                         <tr>
                                             <th>ID</th>
                                             <th>User Name</th>
-                                            <th>Avatar</th>
                                             <th>Date create</th>
                                             <th>Delete</th>
                                         </tr>
@@ -30,9 +29,7 @@
                                         <tr>
                                             <td>{{$user->id}}</td>
                                             <td>{{$user->name}}</td>
-                                            <td><img src="{{url($user->email)}}" alt=""></td>
-                                            
-                                            <td><a href="#"><i class="fas fa-trash-alt"></i> Delete<a></td>
+                                            <td>{{$user->created_at}}</td>
                                             </tr>
                                             @endforeach
                                         
